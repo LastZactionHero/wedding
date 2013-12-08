@@ -1,0 +1,54 @@
+<a id="where-to">
+</a>
+<div class="fabric-rule">
+</div>
+
+<!-- Visitors -->
+
+<section id="visitors-page" class="row" data-magellan-destination='visitors'>
+
+	<div class="page-wrapper">
+
+		<div class="page">
+
+			<h2 class="align-center">
+				Where To...
+			</h2>
+			<br />
+			<img alt="divider" class="page-divider" src="images/divider2.png" />
+			<br />
+			
+			<dl class="tabs">
+			  <dd class="active"><a class='tab-link' href="#sleep">Sleep</a></dd>
+			  <dd><a class='tab-link' href="#eat">Eat</a></dd>
+			  <dd><a class='tab-link' href="#play">Play</a></dd>
+			  <dd><a class='tab-link' href="#explore">Explore</a></dd>			
+			</dl>
+			<ul class="tabs-content">
+			  <li class="active" id="sleepTab">
+				<%= erb :where_to_tab_sleep %>
+			  </li>
+			  <li id="eatTab">
+				<%= erb :where_to_tab_eat %>
+			  </li>
+			  <li id="playTab">
+			  	<%= erb :where_to_tab_play %>
+			  </li>
+   			  <li id="exploreTab">
+   			  	<%= erb :where_to_tab_explore %>
+   			  </li>
+			</ul>
+		
+		</div>
+
+	</div>
+
+</section>
+
+<script type='text/javascript'>
+	$(document).ready(function(){
+		$(".tab-link").click(function(){
+			return false;
+		});
+	});
+</script>
