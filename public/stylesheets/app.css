@@ -23,3 +23,22 @@ li.registry {
 	text-align: center;
 	font-size: 18px;
 }
+
+h6 {
+	line-height: 24px;
+}
+
+.nav-item {
+	font-family: 'Quando', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}
+
+.nav-link {
+	font-size: 18px !important;
+	color: white !important;
+}
+
+#main-menu {
+	//background-image: url('../images/paper.png');
+	background-color: rgba(0,0,0,0.6) !important;
+
+}
