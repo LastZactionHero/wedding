@@ -397,6 +397,18 @@ dd.active {
 	font-size: 22px;
 }	
 
+.top-bar section {
+	width: 100%;
+}
+
+dl.tabs dd {
+	width: 100%;
+}
+
+.top-bar ul > li:not(.name):hover a, .top-bar ul > li:not(.name).active a, .top-bar ul > li:not(.name):focus a {
+	color: #333333 !important;
+	background-color: #EFEFEF;
+}
 
 /* iPads (portrait and landscape) ----------- */
 @media only screen 
