@@ -46,3 +46,13 @@ h6 {
 .tabs-content {
 	clear: both;
 }
+
+.photo-gallery-link {
+	color: #2980b9;
+}
+
+#gallery-page {
+	img {
+		padding: 0px !important;
+	}
+}

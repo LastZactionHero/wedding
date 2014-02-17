@@ -7,87 +7,31 @@
 
 	<div class="page-wrapper">
 
-		<ul class="block-grid four-up mobile-two-up">
-			<li>
-				<a class="fancybox" href="http://placehold.it/220x150">
-					<img alt="gallery-image" src="http://placehold.it/220x150" />
+		<div class="page">
+			<h2 class='align-center'>
+				Photo Gallery
+			</h2>
+
+			<br />
+			<img alt="divider" class="page-divider" src="images/divider2.png" />
+			<br />
+			
+			<h5 class='align-center'>
+				<a class='photo-gallery-link' href="http://www.flickr.com/photos/117820642@N04/sets/72157641086452473/" target="_blank">
+					View All Photos
 				</a>
-			</li>
+			</h5>
 
-
-			<li>
-				<a class="fancybox" href="http://placehold.it/220x150">
-					<img alt="gallery-image" src="http://placehold.it/220x150" />
-				</a>
-			</li>
-
-			<li>
-				<a class="fancybox" href="http://placehold.it/220x150">
-					<img alt="gallery-image" src="http://placehold.it/220x150" />
-				</a>
-			</li>
-
-
-			<li>
-				<a class="fancybox" href="http://placehold.it/220x150">
-					<img alt="gallery-image" src="http://placehold.it/220x150" />
-				</a>
-			</li>
-
-			<li>
-				<a class="fancybox" href="http://placehold.it/220x150">
-					<img alt="gallery-image" src="http://placehold.it/220x150" />
-				</a>
-			</li>
-
-
-			<li>
-				<a class="fancybox" href="http://placehold.it/220x150">
-					<img alt="gallery-image" src="http://placehold.it/220x150" />
-				</a>
-			</li>
-
-			<li>
-				<a class="fancybox" href="http://placehold.it/220x150">
-					<img alt="gallery-image" src="http://placehold.it/220x150" />
-				</a>
-			</li>
-
-
-			<li>
-				<a class="fancybox" href="http://placehold.it/220x150">
-					<img alt="gallery-image" src="http://placehold.it/220x150" />
-				</a>
-			</li>
-
-			<li>
-				<a class="fancybox" href="http://placehold.it/220x150">
-					<img alt="gallery-image" src="http://placehold.it/220x150" />
-				</a>
-			</li>
-
-
-			<li>
-				<a class="fancybox" href="http://placehold.it/220x150">
-					<img alt="gallery-image" src="http://placehold.it/220x150" />
-				</a>
-			</li>
-
-			<li>
-				<a class="fancybox" href="http://placehold.it/220x150">
-					<img alt="gallery-image" src="http://placehold.it/220x150" />
-				</a>
-			</li>
-
-
-			<li>
-				<a class="fancybox" href="http://placehold.it/220x150">
-					<img alt="gallery-image" src="http://placehold.it/220x150" />
-				</a>
-			</li>
-
-		</ul>
-
+			<ul class="block-grid four-up mobile-two-up">			
+				<% @gallery.each do |image| %>
+					<li>
+						<a href="<%= image[:url] %>" target="_blank">
+							<img alt="gallery-image" src="<%= image[:thumbnail_url] %>"/>
+						</a>
+					</li>
+				<% end %>
+			</ul>
+		</div>
 	</div>
 
 
