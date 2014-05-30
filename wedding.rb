@@ -1,8 +1,24 @@
 require 'sinatra'
+require 'gmail'
 
 get '/' do
 	@gallery = gallery_data
+	@rehearsal_rsvp = false
   erb :index
+end
+
+get '/rsvp' do
+	@gallery = gallery_data
+	@rehearsal_rsvp = true
+	erb :index
+end
+
+post '/rsvp/submit' do
+	puts params
+
+	send_rsvp_email(params[:names], params[:attending])
+	status 200
+	body ''
 end
 
 def gallery_data
@@ -30,4 +46,15 @@ end
 
 def thumbnail_url(id)
   "/images/gallery_thumbnails/thumbnail_PIS#{id}.jpg"
+end
+
+def send_rsvp_email(name, attending)
+	Gmail.connect("zdicklin@gmail.com", "xxxxxxx") do |gmail|
+		email = gmail.compose do
+		  to "zdicklin@gmail.com, mwatts84@gmail.com"
+		  subject "Rehearsal Dinner RSVP: #{name} is #{attending == 'true' ? 'attending' : 'not attending'}"
+		  body "Rehearsal Dinner RSVP:\n#{name}\nAttending: #{attending}"
+		end
+		email.deliver!
+	end
 end
