@@ -43,14 +43,11 @@ $(document).ready(function(){
   $(".rsvp-button").click(function(){
 
     $(".rehearsal-form").fadeOut();
-    $(".rehearsal-sending").fadeIn();
 
     $.post("/rsvp/submit", $("form.rehearsal-form").serialize())
       .success(function(){
-        $(".rehearsal-sending").fadeOut();
         $(".rehearsal-success").fadeIn();
       }).error(function(){
-        $(".rehearsal-sending").fadeOut();
         $(".rehearsal-error").fadeIn();
       });
 
